@@ -1,10 +1,8 @@
 FROM python:3
 
-WORKDIR /usr/src/app
-
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install pandas
+RUN pip install git+https://github.com/nficano/pytube.git
 
 COPY . .
 
-CMD [ "python", "./youtube.py" ]
+CMD ["python", "youtube.py"]
