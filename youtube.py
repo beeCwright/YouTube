@@ -9,7 +9,7 @@ if len(df) > 0:
         this_url = df.urls.iloc[i]
         try:
             yt = YouTube(this_url)
-            yt.streams.first().download('./downloads')
+            yt.streams.first().download('/downloads')
             print('{} ({}) {}'.format('Success:', str(i), yt.title))
         except:
             print('{} ({}) {}'.format('Failed:', str(i), yt.title))
